@@ -91,6 +91,29 @@ The goal of this project is to build a mini Business Intelligence tool similar t
 
 ---
 
+## Sample Data for Testing
+
+To help users test the application, a sample Excel file has been provided in this repository.
+
+You can download the sample Excel file and upload it into the application to see how the dashboard, charts, and KPIs are generated automatically.
+
+### Steps to Test
+
+1. Download the sample Excel file from the repository.
+2. Open the InsightSheet web application.
+3. Upload the sample Excel file.
+4. Select:
+
+   * Category Column
+   * Metric Column
+   * Date Column (optional)
+   * Aggregation Type (Sum, Average, Count, etc.)
+5. The dashboard will be generated automatically with charts and KPI metrics.
+
+The sample dataset contains sales data including products, regions, dates, units sold, and revenue, which can be used to test charts, KPIs, and forecasting features.
+
+---
+
 ## Author
 
 Developed as a part of portfolio project for data analytics / business analytics / consulting career path.
