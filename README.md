@@ -93,4 +93,5 @@ The goal of this project is to build a mini Business Intelligence tool similar t
 
 ## Author
 
-Developed as a portfolio project for data analytics / business analytics / consulting career path.
+Developed as a part of portfolio project for data analytics / business analytics / consulting career path.
+By Krupal Patel .
