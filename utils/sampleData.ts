@@ -1,0 +1,25 @@
+import type { DataRow } from "@/lib/dashboardTypes";
+
+export const sampleData: DataRow[] = [
+  { Date: "2026-03-01", Product: "Wireless Earbuds", Region: "North", Channel: "Amazon", Orders: 42, Revenue: 18900, Cost: 12740 },
+  { Date: "2026-03-02", Product: "Wireless Earbuds", Region: "West", Channel: "Flipkart", Orders: 35, Revenue: 15950, Cost: 11000 },
+  { Date: "2026-03-03", Product: "Smart Watch", Region: "East", Channel: "Amazon", Orders: 28, Revenue: 22400, Cost: 14880 },
+  { Date: "2026-03-04", Product: "Smart Watch", Region: "South", Channel: "Retail", Orders: 31, Revenue: 24800, Cost: 16800 },
+  { Date: "2026-03-05", Product: "Bluetooth Speaker", Region: "North", Channel: "eBay", Orders: 24, Revenue: 10800, Cost: 7420 },
+  { Date: "2026-03-06", Product: "Bluetooth Speaker", Region: "West", Channel: "Amazon", Orders: 26, Revenue: 11700, Cost: 7680 },
+  { Date: "2026-03-07", Product: "Laptop Stand", Region: "East", Channel: "Retail", Orders: 44, Revenue: 9900, Cost: 6150 },
+  { Date: "2026-03-08", Product: "Laptop Stand", Region: "South", Channel: "Amazon", Orders: 48, Revenue: 10950, Cost: 6810 },
+  { Date: "2026-03-09", Product: "Gaming Mouse", Region: "North", Channel: "Amazon", Orders: 33, Revenue: 14850, Cost: 9970 },
+  { Date: "2026-03-10", Product: "Gaming Mouse", Region: "West", Channel: "Flipkart", Orders: 29, Revenue: 13050, Cost: 8850 },
+  { Date: "2026-03-11", Product: "Mechanical Keyboard", Region: "East", Channel: "Amazon", Orders: 21, Revenue: 19950, Cost: 14280 },
+  { Date: "2026-03-12", Product: "Mechanical Keyboard", Region: "South", Channel: "Retail", Orders: 19, Revenue: 18050, Cost: 12900 },
+  { Date: "2026-03-13", Product: "Wireless Earbuds", Region: "North", Channel: "eBay", Orders: 37, Revenue: 16650, Cost: 11240 },
+  { Date: "2026-03-14", Product: "Smart Watch", Region: "West", Channel: "Amazon", Orders: 34, Revenue: 27200, Cost: 18360 },
+  { Date: "2026-03-15", Product: "Bluetooth Speaker", Region: "East", Channel: "Amazon", Orders: 27, Revenue: 12150, Cost: 7890 },
+  { Date: "2026-03-16", Product: "Laptop Stand", Region: "South", Channel: "Flipkart", Orders: 41, Revenue: 9250, Cost: 5720 },
+  { Date: "2026-03-17", Product: "Gaming Mouse", Region: "North", Channel: "Retail", Orders: 36, Revenue: 16200, Cost: 10840 },
+  { Date: "2026-03-18", Product: "Mechanical Keyboard", Region: "West", Channel: "Amazon", Orders: 23, Revenue: 21850, Cost: 15300 },
+  { Date: "2026-03-19", Product: "Wireless Earbuds", Region: "East", Channel: "Amazon", Orders: 46, Revenue: 20700, Cost: 13980 },
+  { Date: "2026-03-20", Product: "Smart Watch", Region: "South", Channel: "eBay", Orders: 32, Revenue: 25600, Cost: 17120 },
+  { Date: "2026-03-21", Product: "Bluetooth Speaker", Region: "North", Channel: "Retail", Orders: 25, Revenue: 11250, Cost: 7360 },
+];

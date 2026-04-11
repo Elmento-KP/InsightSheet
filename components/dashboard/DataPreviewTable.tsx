@@ -6,7 +6,7 @@ type DataPreviewTableProps = {
 };
 
 export default function DataPreviewTable({ data }: DataPreviewTableProps) {
-  const previewRows = data.slice(0, 8);
+  const previewRows = data.slice(0, 10);
   const columns = previewRows.length > 0 ? Object.keys(previewRows[0]) : [];
 
   return (

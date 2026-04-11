@@ -5,9 +5,13 @@ import { UploadCloud } from 'lucide-react';
 
 type UploadBoxProps = {
   onDataParsed: (file: File) => void;
+  onUseSampleData: () => void;
 };
 
-export default function UploadBox({ onDataParsed }: UploadBoxProps) {
+export default function UploadBox({
+  onDataParsed,
+  onUseSampleData,
+}: UploadBoxProps) {
   const [dragActive, setDragActive] = useState(false);
 
   const handleDrag = (e: React.DragEvent) => {
@@ -48,6 +52,15 @@ export default function UploadBox({ onDataParsed }: UploadBoxProps) {
       <label htmlFor="file-upload" className="mt-6 inline-block cursor-pointer rounded-2xl bg-slate-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-800">
         Browse Files
       </label>
+      <div className="mt-4">
+        <button
+          type="button"
+          onClick={onUseSampleData}
+          className="rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-300 hover:bg-slate-50"
+        >
+          Use Sample Data
+        </button>
+      </div>
     </div>
   );
 }

@@ -1,4 +1,10 @@
-import { Lightbulb, ShieldAlert, TrendingUp } from "lucide-react";
+import {
+  Lightbulb,
+  ShieldAlert,
+  TrendingDown,
+  TrendingUp,
+  Wallet,
+} from "lucide-react";
 import type { InsightItem } from "@/lib/dashboardTypes";
 import SectionCard from "@/components/dashboard/SectionCard";
 
@@ -11,6 +17,8 @@ const iconMap = {
   trend: TrendingUp,
   category: TrendingUp,
   quality: ShieldAlert,
+  profit: Wallet,
+  channel: TrendingDown,
 };
 
 export default function InsightList({ insights }: InsightListProps) {

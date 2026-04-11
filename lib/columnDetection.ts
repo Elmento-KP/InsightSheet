@@ -18,12 +18,19 @@ export const inferColumnSelection = (
       metricColumn: "",
       categoryColumn: "",
       dateColumn: "",
+      aggregationType: "sum",
+      revenueColumn: "",
+      costColumn: "",
+      channelColumn: "",
     };
   }
 
   let metricColumn = "";
   let categoryColumn = "";
   let dateColumn = "";
+  let revenueColumn = "";
+  let costColumn = "";
+  let channelColumn = "";
 
   for (const column of columns) {
     const sampleValues = data
@@ -45,6 +52,18 @@ export const inferColumnSelection = (
 
     const dateLikeCount = sampleValues.filter(isDateLike).length;
     const normalizedColumn = column.toLowerCase();
+
+    if (!revenueColumn && normalizedColumn.includes("revenue")) {
+      revenueColumn = column;
+    }
+
+    if (!costColumn && normalizedColumn.includes("cost")) {
+      costColumn = column;
+    }
+
+    if (!channelColumn && normalizedColumn.includes("channel")) {
+      channelColumn = column;
+    }
 
     if (
       !dateColumn &&
@@ -76,5 +95,9 @@ export const inferColumnSelection = (
     metricColumn,
     categoryColumn,
     dateColumn,
+    aggregationType: "sum",
+    revenueColumn,
+    costColumn,
+    channelColumn,
   };
 };
