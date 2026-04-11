@@ -52,7 +52,7 @@ export default function CategoryCharts({ analysis }: CategoryChartsProps) {
               />
               <Tooltip
                 cursor={{ fill: "#f8fafc" }}
-                formatter={(value: number) => formatSmartNumber(value)}
+                formatter={(value: unknown) => formatSmartNumber(value)}
               />
               <Bar dataKey="value" fill="#0f766e" radius={[12, 12, 0, 0]} />
             </BarChart>
@@ -82,7 +82,7 @@ export default function CategoryCharts({ analysis }: CategoryChartsProps) {
                   />
                 ))}
               </Pie>
-              <Tooltip formatter={(value: number) => formatSmartNumber(value)} />
+              <Tooltip formatter={(value: unknown) => formatSmartNumber(value)} />
               <Legend />
             </PieChart>
           </ResponsiveContainer>

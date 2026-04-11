@@ -42,7 +42,7 @@ export default function TrendForecastChart({
               axisLine={false}
               tickFormatter={formatAxisValue}
             />
-            <Tooltip formatter={(value) => formatSmartNumber(Number(value))} />
+            <Tooltip formatter={(value: unknown) => formatSmartNumber(value)} />
             <Legend />
             <Line
               type="monotone"

@@ -32,7 +32,7 @@ export default function ChannelAnalysisSection({
               <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
               <XAxis dataKey="name" stroke="#64748b" tickLine={false} />
               <YAxis stroke="#64748b" tickLine={false} axisLine={false} />
-              <Tooltip formatter={(value: number) => formatSmartNumber(value)} />
+              <Tooltip formatter={(value: unknown) => formatSmartNumber(value)} />
               <Bar dataKey="value" fill="#2563eb" radius={[12, 12, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -54,7 +54,7 @@ export default function ChannelAnalysisSection({
                 axisLine={false}
                 tickFormatter={formatAxisValue}
               />
-              <Tooltip formatter={(value: number) => formatSmartNumber(value)} />
+              <Tooltip formatter={(value: unknown) => formatSmartNumber(value)} />
               <Bar dataKey="value" fill="#0f766e" radius={[12, 12, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>

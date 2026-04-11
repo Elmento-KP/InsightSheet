@@ -4,31 +4,42 @@ export const formatCompactNumber = (value: number) =>
     maximumFractionDigits: 1,
   }).format(value);
 
-export const formatSmartNumber = (value: number) => {
-  const absoluteValue = Math.abs(value);
-
-  if (absoluteValue >= 1000) {
-    return formatCompactNumber(value);
+export function formatSmartNumber(value: unknown): string {
+  if (value === null || value === undefined) {
+    return "0";
   }
 
-  if (Number.isInteger(value)) {
-    return Intl.NumberFormat("en-US", {
-      maximumFractionDigits: 0,
-    }).format(value);
+  const num = Number(value);
+
+  if (Number.isNaN(num)) {
+    return "0";
   }
 
-  return Intl.NumberFormat("en-US", {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 1,
-  }).format(value);
-};
+  const absoluteValue = Math.abs(num);
 
-export const formatAxisValue = (value: number) => {
-  if (Math.abs(value) >= 1000) {
-    return formatCompactNumber(value);
+  if (absoluteValue >= 1_000_000) {
+    return `${(num / 1_000_000).toFixed(1)}M`;
   }
 
-  return formatSmartNumber(value);
+  if (absoluteValue >= 1_000) {
+    return `${(num / 1_000).toFixed(1)}K`;
+  }
+
+  return num.toFixed(0);
+}
+
+export const formatAxisValue = (value: unknown) => {
+  const num = Number(value);
+
+  if (!Number.isFinite(num)) {
+    return "0";
+  }
+
+  if (Math.abs(num) >= 1000) {
+    return formatCompactNumber(num);
+  }
+
+  return formatSmartNumber(num);
 };
 
 export const formatDateLabel = (date: Date) =>
