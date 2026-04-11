@@ -1,9 +1,11 @@
 import type {
   AggregationType,
   ChartDatum,
+  ChannelAnalysis,
   ColumnSelection,
   DashboardAnalysis,
   DataRow,
+  ProfitAnalysis,
   ViewMode,
 } from "@/lib/dashboardTypes";
 import { buildForecastSeries } from "@/utils/forecast";
@@ -168,7 +170,10 @@ const buildTrendData = (
   return fallbackSeries;
 };
 
-const buildProfitAnalysis = (data: DataRow[], selection: ColumnSelection) => {
+const buildProfitAnalysis = (
+  data: DataRow[],
+  selection: ColumnSelection
+): ProfitAnalysis | null => {
   if (!selection.revenueColumn || !selection.costColumn) {
     return null;
   }
@@ -202,7 +207,10 @@ const buildProfitAnalysis = (data: DataRow[], selection: ColumnSelection) => {
   };
 };
 
-const buildChannelAnalysis = (data: DataRow[], selection: ColumnSelection) => {
+const buildChannelAnalysis = (
+  data: DataRow[],
+  selection: ColumnSelection
+): ChannelAnalysis | null => {
   if (!selection.channelColumn) {
     return null;
   }
