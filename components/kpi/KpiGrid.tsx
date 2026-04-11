@@ -103,7 +103,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {[...cards, ...profitCards].map((card) => (
-        <KpiCard key={card.key} {...card} />
+        <KpiCard key={key} {...card} />
       ))}
     </div>
   );
