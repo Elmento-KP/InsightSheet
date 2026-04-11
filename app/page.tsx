@@ -261,6 +261,7 @@ export default function Home() {
               forecast trends, and turn raw rows into a polished SaaS-style
               analytics workspace.
             </p>
+            <p>Note : This project is under-development and is on regular updates. Thanks for Visting</p>
           </div>
         </div>
 
