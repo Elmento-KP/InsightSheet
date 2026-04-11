@@ -20,7 +20,7 @@ type KpiGridProps = {
 export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
   const cards = [
     {
-      key: "total",
+      id: "total",
       title: "Total",
       value: formatSmartNumber(analysis.kpis.total),
       subtitle: analysis.activeMetricLabel,
@@ -28,7 +28,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
       accent: "from-sky-500 to-cyan-400",
     },
     {
-      key: "average",
+      id: "average",
       title: "Average",
       value: formatSmartNumber(analysis.kpis.average),
       subtitle: analysis.activeMetricLabel,
@@ -36,7 +36,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
       accent: "from-emerald-500 to-lime-400",
     },
     {
-      key: "max",
+      id: "max",
       title: "Max",
       value: formatSmartNumber(analysis.kpis.max),
       subtitle: analysis.activeMetricLabel,
@@ -44,7 +44,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
       accent: "from-amber-500 to-orange-400",
     },
     {
-      key: "min",
+      id: "min",
       title: "Min",
       value: formatSmartNumber(analysis.kpis.min),
       subtitle: analysis.activeMetricLabel,
@@ -57,7 +57,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
     viewMode === "profit" && analysis.profitAnalysis
       ? [
           {
-            key: "revenue",
+            id: "revenue",
             title: "Revenue",
             value: formatSmartNumber(analysis.profitAnalysis.revenue),
             subtitle: "Total revenue",
@@ -65,7 +65,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
             accent: "from-indigo-500 to-sky-400",
           },
           {
-            key: "profit",
+            id: "profit",
             title: "Profit / Loss",
             value: formatSmartNumber(analysis.profitAnalysis.profit),
             subtitle:
@@ -88,7 +88,7 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
                   : "from-slate-500 to-slate-300",
           },
           {
-            key: "breakeven",
+            id: "breakeven",
             title: "Break-even",
             value: analysis.profitAnalysis.isBreakEven ? "Above" : "Below",
             subtitle: analysis.profitAnalysis.isBreakEven
@@ -102,9 +102,11 @@ export default function KpiGrid({ analysis, viewMode }: KpiGridProps) {
 
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-      {[...cards, ...profitCards].map((card) => (
-        <KpiCard key={key} {...card} />
-      ))}
+      {[...cards, ...profitCards].map((card, index) => {
+        const { id, ...cardProps } = card;
+
+        return <KpiCard key={id ?? index} {...cardProps} />;
+      })}
     </div>
   );
 }

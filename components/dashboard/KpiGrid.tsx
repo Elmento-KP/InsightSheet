@@ -15,25 +15,25 @@ type KpiGridProps = {
 
 const cards = [
   {
-    key: "total",
+    id: "total",
     title: "Total",
     icon: BadgeIndianRupee,
     color: "from-sky-500 to-cyan-400",
   },
   {
-    key: "average",
+    id: "average",
     title: "Average",
     icon: Activity,
     color: "from-emerald-500 to-lime-400",
   },
   {
-    key: "max",
+    id: "max",
     title: "Max",
     icon: ChartNoAxesCombined,
     color: "from-amber-500 to-orange-400",
   },
   {
-    key: "min",
+    id: "min",
     title: "Min",
     icon: ScanSearch,
     color: "from-fuchsia-500 to-pink-400",
@@ -43,9 +43,9 @@ const cards = [
 export default function KpiGrid({ analysis }: KpiGridProps) {
   return (
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-      {cards.map(({ key, title, icon: Icon, color }) => (
+      {cards.map(({ id, title, icon: Icon, color }) => (
         <div
-          key={key}
+          key={id}
           className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white p-5 shadow-[0_16px_45px_-30px_rgba(15,23,42,0.45)]"
         >
           <div
@@ -58,7 +58,7 @@ export default function KpiGrid({ analysis }: KpiGridProps) {
             </span>
           </div>
           <p className="text-3xl font-semibold tracking-tight text-slate-950">
-            {formatValue(analysis.kpis[key])}
+            {formatValue(analysis.kpis[id])}
           </p>
           <p className="mt-2 text-sm text-slate-500">{analysis.metricColumn}</p>
         </div>
