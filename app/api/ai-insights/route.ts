@@ -55,7 +55,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           error:
-            "GEMINI_API_KEY is not configured. Add it to your environment to enable AI insights.",
+            "API is not configured. Add it to your environment to enable AI insights.",
         },
         { status: 500 }
       );
@@ -157,7 +157,7 @@ export async function POST(request: Request) {
     if (!response.ok) {
       return NextResponse.json(
         {
-          error: "Gemini request failed.",
+          error: "AI request failed.",
           details: responseText,
         },
         { status: 500 }
@@ -182,8 +182,8 @@ export async function POST(request: Request) {
         {
           error:
             payload.candidates?.[0]?.finishReason === "SAFETY"
-              ? "Gemini did not return content because the response was blocked."
-              : "Gemini did not return any content.",
+              ? "AI did not return content because the response was blocked."
+              : "AI did not return any content.",
         },
         { status: 500 }
       );
